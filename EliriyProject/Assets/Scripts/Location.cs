@@ -18,12 +18,14 @@ public class Location : MonoBehaviour
     {
         
     }
-    
-    
-    [Serializable]
-    public class Travel
-    {
-        [SerializeField] private Location target_location = null;
-        [SerializeField] private Way      way             = null;
-    }
+
+    public Travel getTravelInfo() => travels[0];
+}
+
+[Serializable]
+public class Travel
+{
+    public Location target_location = null;
+    public Way      way             = null;
+    public bool     start_with_end  = false;
 }

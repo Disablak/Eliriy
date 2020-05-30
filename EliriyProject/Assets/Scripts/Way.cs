@@ -6,9 +6,11 @@ public class Way : MonoBehaviour
 {
     [SerializeField] private Transform[] way_points = null;
     [SerializeField] private float way_length = 0.0f;
+
+    public Transform[] getPoints() => way_points;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         way_points = transform.getComponentAllChildren<Transform>();
         way_length = getLength();
