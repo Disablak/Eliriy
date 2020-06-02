@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class PlayerTraveling : MonoBehaviour
 {
+  #region Fields
   [SerializeField] private float speed_traveling = 0.5f;
 
   private Travel    current_travel   = null;
   private Coroutine travel_coroutine = null;
 
   private int cur_travel_point_idx = 0;
+  #endregion
 
-  
   
   public void startTravel( Travel travel )
   {
     current_travel = travel;
     
-    travel_coroutine = StartCoroutine( coroutineTravel( travel ) );
+    travel_coroutine = StartCoroutine( coroutineTravel() );
   }
   
   public void reverseTraveling()
@@ -41,17 +42,19 @@ public class PlayerTraveling : MonoBehaviour
                 
         yield return moveFromOneToAnother(first_point, second_point);
       }
+
+      GameEventManager.invokePlayerEnterLocation( current_travel.start_location );
     }
   }
 
   #region Coroutines
-  private IEnumerator coroutineTravel( Travel travel )
+  private IEnumerator coroutineTravel()
   {
     GameEventManager.invokePlayerStartTraveling();
         
-    Transform[] points = travel.way.getPoints();
+    Transform[] points = current_travel.way.getPoints();
 
-    if ( travel.start_with_end )
+    if ( current_travel.start_with_end )
       Array.Reverse(points);
         
     for ( int i = 0; i < points.Length - 1; i++ )
@@ -65,6 +68,7 @@ public class PlayerTraveling : MonoBehaviour
     }
 
     GameEventManager.invokePlayerFinishTraveling();
+    GameEventManager.invokePlayerEnterLocation( current_travel.target_location );
   }
 
   private IEnumerator moveFromOneToAnother( Vector2 first_point, Vector2 second_point )

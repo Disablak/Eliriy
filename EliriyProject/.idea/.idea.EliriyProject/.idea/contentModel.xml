@@ -197,10 +197,15 @@
             <e p="Extension.cs" t="Include" />
           </e>
           <e p="GameEventManager.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
           <e p="Location.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="Player.cs" t="Include" />
             <e p="PlayerTraveling.cs" t="Include" />
+          </e>
+          <e p="ScriptableObjects" t="Include">
+            <e p="ScriptableLocation.cs" t="Include" />
+            <e p="ScriptableLocationAction.cs" t="Include" />
           </e>
           <e p="Shaders" t="Include">
             <e p="Blur.shader" t="Include" />

@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class DialogsManager : MonoBehaviour
 {
-    //[SerializeField] private 
+    [SerializeField] private DialogStory dialog_story = null;
     
     public static DialogsManager instance = null;
 
     private void Awake()
     {
         instance = this;
+
+        GameEventManager.onPlayerEnterLocation += initDialogStory;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void initDialogStory( Location location )
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        dialog_story.gameObject.SetActive( true );
+        dialog_story.init( location );
     }
 }

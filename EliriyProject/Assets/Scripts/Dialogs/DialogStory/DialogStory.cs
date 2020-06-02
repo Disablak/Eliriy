@@ -2,67 +2,140 @@
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class DialogStory : MonoBehaviour
 {
-    [SerializeField] private TextAsset       test_text_asset = null;
-    [SerializeField] private TextMeshProUGUI txt_main        = null;
-
+    [SerializeField] private GameObject tab_location = null;
+    [SerializeField] private GameObject tab_story = null;
+    [Space]
+    [Header("TAB location")]
+    [SerializeField] private TextMeshProUGUI txt_loc_name   = null;
+    [SerializeField] private TextMeshProUGUI txt_loc_desc   = null;
+    [SerializeField] private Image           img_loc_banner = null;
+    
+    [Header("TAB story")]
+    [SerializeField] private TextMeshProUGUI txt_story_desc = null;
+    
+    [Header("Other")]
     [SerializeField] private Transform      root_answers     = null;
     [SerializeField] private UIAnswerButton ui_answer_button = null;
 
 
-    private Story test_story = null;
-
-    private void Awake()
+    private List<UIAnswerButton> all_buttons = new List<UIAnswerButton>();
+    
+    public void init( Location location )
     {
-        test_story = new Story(test_text_asset.text);
-        loadStoryText();
+        changeTabs( true );
+
+        ScriptableLocation scriptable_location = location.getScriptableLocation;
+        txt_loc_name.text = scriptable_location.location_name;
+        txt_loc_desc.text = scriptable_location.location_description;
+        img_loc_banner.sprite = scriptable_location.location_banner;
+
+        spawnActions( scriptable_location.location_actions, location.getTravels );
     }
-
-    private void loadStoryText()
+    
+    public void init( TextAsset text_asset )
     {
-        if (test_story.canContinue)
+        changeTabs( false );
+
+        Story story = new Story( text_asset.text );
+        loadStoryText( story );
+    }
+    
+    #region LocationPart
+    private void spawnActions( List<ScriptableLocationAction> location_actions, List<Travel> travels )
+    {
+        foreach ( ScriptableLocationAction act in location_actions )
         {
-            txt_main.text = test_story.ContinueMaximally();
+            UIAnswerButton ui_answer_button = spawnButtonAnswer();
+            ui_answer_button.init( act.name_story, makeAnswer );
+            
+            void makeAnswer()
+            {
+                destroyAllButtons();
+                init( act.text_story );
+            }
         }
 
-        spawnAnswers();
+        addButtonLeaveLocation( travels );
     }
 
-    private void spawnAnswers()
+    private void addButtonLeaveLocation( List<Travel> travels )
     {
-        List<Choice>         choices        = test_story.currentChoices;
-        List<UIAnswerButton> answer_buttons = new List<UIAnswerButton>();
+        UIAnswerButton ui_answer_button = spawnButtonAnswer();
+        ui_answer_button.init( $"Покинуть локацию", closeDialog );
+    }
+    #endregion
+    
+    #region StoryPart
+    private void loadStoryText( Story story )
+    {
+        if ( story.canContinue )
+            txt_story_desc.text = story.ContinueMaximally();
+
+        spawnAnswers( story );
+    }
+
+    private void spawnAnswers( Story story )
+    {
+        List<Choice> choices = story.currentChoices;
 
         if ( choices.Count == 0 )
-            closeDialog();
-        
-        for (var i = 0; i < choices.Count; i++)
+        {
+            UIAnswerButton answer_button = spawnButtonAnswer();
+            answer_button.init( "Закончить", onClick );
+
+            void onClick()
+            {
+                destroyAllButtons();
+                closeDialog();
+            }
+        }
+
+        for ( var i = 0; i < choices.Count; i++ )
         {
             Choice choice = choices[i];
             int    index  = i;
 
-            UIAnswerButton answer_button = Instantiate(ui_answer_button, root_answers);
-            answer_button.init(choice.text, makeAnswer);
-
-            answer_buttons.Add(answer_button);
+            UIAnswerButton answer_button = spawnButtonAnswer();
+            answer_button.init( choice.text, makeAnswer );
 
             void makeAnswer()
             {
-                test_story.ChooseChoiceIndex(index);
-                loadStoryText();
-
-                //Destroy buttons
-                foreach (var btn in answer_buttons)
-                    Destroy(btn.gameObject);
+                destroyAllButtons();
+                
+                story.ChooseChoiceIndex( index );
+                loadStoryText( story );
             }
         }
     }
+    #endregion
 
+    private UIAnswerButton spawnButtonAnswer()
+    {
+        UIAnswerButton btn = Instantiate( ui_answer_button, root_answers );
+        all_buttons.Add( btn );
+        return btn;
+    }
+
+    private void destroyAllButtons()
+    {
+        foreach ( var btn in all_buttons )
+            Destroy( btn.gameObject );
+        
+        all_buttons = new List<UIAnswerButton>();
+    }
+    
+    private void changeTabs( bool is_location )
+    {
+        tab_location.SetActive( is_location );
+        tab_story.SetActive( !is_location );
+    }
+    
     private void closeDialog()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive( false );
     }
 }

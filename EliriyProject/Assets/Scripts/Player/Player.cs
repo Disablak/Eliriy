@@ -19,6 +19,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        player_traveling.startTravel( current_location.getTravelInfo() );
+        player_traveling.startTravel( current_location.getTravels[0] );
     }
 }

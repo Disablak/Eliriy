@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdvantureMain
       objectReference: {fileID: 0}
+    - target: {fileID: 4394075246159430886, guid: fd1e8d9bbb1921049805556689c1c7d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5326587190231403736, guid: fd1e8d9bbb1921049805556689c1c7d9,
         type: 3}
       propertyPath: m_LocalPosition.x
