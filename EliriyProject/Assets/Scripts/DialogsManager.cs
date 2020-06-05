@@ -7,6 +7,7 @@ public class DialogsManager : MonoBehaviour
     
     public static DialogsManager instance = null;
 
+    
     private void Awake()
     {
         instance = this;
@@ -14,7 +15,7 @@ public class DialogsManager : MonoBehaviour
         GameEventManager.onPlayerEnterLocation += initDialogStory;
     }
 
-    private void initDialogStory( Location location )
+    public void initDialogStory( Location location )
     {
         dialog_story.gameObject.SetActive( true );
         dialog_story.init( location );

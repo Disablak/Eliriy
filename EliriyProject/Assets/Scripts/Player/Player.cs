@@ -1,24 +1,28 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Location current_location = null;
     [Header( "Player Components" )]
+    [SerializeField] private SpriteRenderer sprite_renderer = null;
     [SerializeField] private PlayerTraveling player_traveling = null;
-
-    public static Player instance = null;
-
-    public PlayerTraveling getPlayerTraveling => player_traveling;
 
     private void Awake()
     {
-        instance = this;
+        GameEventManager.onPlayerStartTraveling  += onPlayerStartTravel;
+        GameEventManager.onPlayerFinishTraveling += onPlayerFinishTravel;
     }
 
-    void Start()
+    public void startTraveling( Travel travel )
     {
-        player_traveling.startTravel( current_location.getTravels[0] );
+        player_traveling.startTravel( travel );
     }
+
+    public void cancelTraveling()
+    {
+        player_traveling.cancelTraveling();
+    }
+
+    private void onPlayerStartTravel()  => sprite_renderer.enabled = true;
+    private void onPlayerFinishTravel() => sprite_renderer.enabled = false;
 }

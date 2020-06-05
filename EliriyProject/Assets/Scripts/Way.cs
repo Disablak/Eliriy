@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class Way : MonoBehaviour
 {
     [SerializeField] private Transform[] way_points = null;
-    [SerializeField] private float way_length = 0.0f;
+    
+    private float way_length = 0.0f;
 
     public Transform[] getPoints() => way_points;
     

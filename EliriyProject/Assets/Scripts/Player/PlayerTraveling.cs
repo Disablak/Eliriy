@@ -22,7 +22,7 @@ public class PlayerTraveling : MonoBehaviour
     travel_coroutine = StartCoroutine( coroutineTravel() );
   }
   
-  public void reverseTraveling()
+  public void cancelTraveling()
   {
     StopCoroutine(travel_coroutine);
 

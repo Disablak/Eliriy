@@ -45,27 +45,41 @@ public class DialogStory : MonoBehaviour
     }
     
     #region LocationPart
-    private void spawnActions( List<ScriptableLocationAction> location_actions, List<Travel> travels )
+    private void spawnActions( List<ScriptableLocActionBase> location_actions, List<Travel> travels )
     {
-        foreach ( ScriptableLocationAction act in location_actions )
+        foreach ( ScriptableLocActionBase act in location_actions )
         {
             UIAnswerButton ui_answer_button = spawnButtonAnswer();
-            ui_answer_button.init( act.name_story, makeAnswer );
+            ui_answer_button.init( act.name_action, makeAnswer );
             
             void makeAnswer()
             {
                 destroyAllButtons();
-                init( act.text_story );
+                
+                if ( act is ScriptableLocActionStory story )
+                    init( story.text_story );
+
+                if ( act is ScriptableLocActionTravels )
+                    spawnActions( travels );
             }
         }
-
-        addButtonLeaveLocation( travels );
     }
 
-    private void addButtonLeaveLocation( List<Travel> travels )
+    private void spawnActions( List<Travel> travels )
     {
-        UIAnswerButton ui_answer_button = spawnButtonAnswer();
-        ui_answer_button.init( $"Покинуть локацию", closeDialog );
+        foreach ( Travel travel in travels )
+        {
+            UIAnswerButton ui_answer_button = spawnButtonAnswer();
+            string loc_name = travel.target_location.getScriptableLocation.location_name;
+            ui_answer_button.init( loc_name, makeAnswer );
+
+            void makeAnswer()
+            {
+                destroyAllButtons();
+                closeDialog();
+                GameManager.instance.makeTravel( travel );
+            }
+        }
     }
     #endregion
     

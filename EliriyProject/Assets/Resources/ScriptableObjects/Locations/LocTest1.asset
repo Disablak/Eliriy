@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9325c4ea901aec246bb9bc161f9869d1, type: 3}
   m_Name: LocTest1
   m_EditorClassIdentifier: 
-  location_name: "\u0415\u0431\u0430\u043B\u0430\u043D\u0442\u0438\u044F"
+  location_name: "\u0412\u0438\u043D\u043D\u0438\u0446\u0430"
   location_banner: {fileID: 21300000, guid: 2e37d6654acedce4e946905655bd832c, type: 3}
-  location_description: "\u0422\u0443\u0442 \u0448\u043E\u0442\u043E \u0442\u0430\u043C
-    \u0434\u0430\u0434\u0430 \u0456\u043C\u0435\u043D\u043E."
+  location_description: "\u041D\u0443 \u0432\u0438\u043D\u0438\u0446\u0430 \u0438
+    \u0432\u0438\u043D\u0438\u0446\u0430\n"
   location_actions:
-  - {fileID: 11400000, guid: 895e95d3e2537ae4ba08e4bc9fc3874c, type: 2}
+  - {fileID: 11400000, guid: 2300ae190415f7f45880f3f0340357cd, type: 2}
+  - {fileID: 11400000, guid: 9fdc30a0f0ee85545980805025f27925, type: 2}

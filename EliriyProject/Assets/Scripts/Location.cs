@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
 public class Location : MonoBehaviour
 {
     [SerializeField] private ScriptableLocation scriptable_location = null;
+    [SerializeField] private TextMeshPro txt_loc_name = null;
     [SerializeField] private List<Travel> travels = null;
 
     public ScriptableLocation getScriptableLocation => scriptable_location;
@@ -15,6 +17,13 @@ public class Location : MonoBehaviour
     {
         foreach ( var travel in travels )
             travel.setStartLocation( this );
+
+        txt_loc_name.text = scriptable_location.location_name;
+    }
+
+    private void OnMouseUp()
+    {
+        GameManager.instance.showDialogLocation( this );
     }
 }
 

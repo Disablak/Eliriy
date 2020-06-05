@@ -10,5 +10,5 @@ public class ScriptableLocation : ScriptableObject
   [TextArea]
   public string location_description = string.Empty;
   [Space]
-  public List<ScriptableLocationAction> location_actions = null;
+  public List<ScriptableLocActionBase> location_actions = null;
 }

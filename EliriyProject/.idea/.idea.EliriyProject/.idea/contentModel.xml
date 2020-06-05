@@ -186,6 +186,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="CameraHandler.cs" t="Include" />
           <e p="Dialogs" t="Include">
             <e p="DialogStory" t="Include">
               <e p="DialogStory.cs" t="Include" />
@@ -204,8 +205,12 @@
             <e p="PlayerTraveling.cs" t="Include" />
           </e>
           <e p="ScriptableObjects" t="Include">
+            <e p="LocationActions" t="Include">
+              <e p="ScriptableLocActionBase.cs" t="Include" />
+              <e p="ScriptableLocActionStory.cs" t="Include" />
+              <e p="ScriptableLocActionTravels.cs" t="Include" />
+            </e>
             <e p="ScriptableLocation.cs" t="Include" />
-            <e p="ScriptableLocationAction.cs" t="Include" />
           </e>
           <e p="Shaders" t="Include">
             <e p="Blur.shader" t="Include" />

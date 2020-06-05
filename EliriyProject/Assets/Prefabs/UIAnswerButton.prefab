@@ -66,8 +66,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7b15e280f459eb4aa384cc5d9821ab4, type: 2}
+  m_sharedMaterial: {fileID: 9208804584402172251, guid: e7b15e280f459eb4aa384cc5d9821ab4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -288,5 +289,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28f45d8395c80e4bb8f3fd711d848dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 6190113230207397318}
   txt_answer: {fileID: 2278358429546720864}
+  button: {fileID: 6190113230207397318}

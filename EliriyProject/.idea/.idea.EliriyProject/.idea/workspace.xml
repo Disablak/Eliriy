@@ -23,24 +23,32 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EliriyProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EliriyProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EliriyProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EliriyProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AdvantureMain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AdvantureMain.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogStory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DialogStory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UIAnswerButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UIAnswerButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/LocationActions/LocationActionTest1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/LocationActions/LocationActionTest1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/Locations/LocTest1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/Locations/LocTest1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogStory/DialogStory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogStory/DialogStory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogStory/UIAnswerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogStory/UIAnswerButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DialogsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEventManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Location.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerTraveling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerTraveling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocationAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocationAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Way.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Way.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/BuiltinAssemblies.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/13d7e9-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/13d7e9-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/51a2fb-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/51a2fb-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +59,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/LocationActions/ScriptableLocActionBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameEventManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocationAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogStory/DialogStory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DialogsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Way.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkLibs/InkRuntime/Choice.cs" root0="FORCE_HIGHLIGHTING" />
@@ -64,29 +73,38 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerTraveling.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shaders/Blur.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/LocationActions/ScriptableLocActionStory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Extension/Extension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Location.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/LocationActions/ScriptableLocActionTravels.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Extension/Extension.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Way.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogStory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/Blur.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerTraveling.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogLocation/DialogLocation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocationAction.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogStory/UIAnswerButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Location.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DialogsManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocationAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocActionStory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ScriptableLocationActionBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/LocationActions/ScriptableLocActionBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/LocationActions/ScriptableLocActionStory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerTraveling.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/LocationActions/ScriptableLocActionTravels.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogs/DialogStory/DialogStory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DialogsManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Location.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Way.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraHandler.cs" />
       </list>
     </option>
   </component>
@@ -112,10 +130,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16196">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16196" />
+      <option name="pid" />
       <method v="2" />
     </configuration>
   </component>
@@ -136,6 +154,9 @@
       <workItem from="1591026700494" duration="2025000" />
       <workItem from="1591028763971" duration="7208000" />
       <workItem from="1591119347789" duration="6563000" />
+      <workItem from="1591211011632" duration="3557000" />
+      <workItem from="1591297267368" duration="3737000" />
+      <workItem from="1591384027340" duration="1205000" />
     </task>
     <servers />
   </component>
@@ -232,5 +253,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591121816869" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591298442210">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591298442210" />
   </component>
 </project>
