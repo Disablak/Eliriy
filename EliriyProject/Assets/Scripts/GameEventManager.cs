@@ -13,6 +13,7 @@ public static class GameEventManager
     #endregion
     
     public static event Action<Location> onPlayerEnterLocation = location => { };
+    public static event Action<Location> onPlayerLeaveLocation = location => { };
     #endregion
     
     
@@ -25,8 +26,14 @@ public static class GameEventManager
 
     public static void invokePlayerEnterLocation( Location location )
     {
-        Debug.Log($"invoke player enter location: {location.name}");
-        onPlayerEnterLocation(location);
+        Debug.Log($"invoke player enter location: {location.getScriptableLocation.location_name}");
+        onPlayerEnterLocation( location );
+    }
+
+    public static void invokePlayerLeaveLocation( Location location )
+    {
+        Debug.Log($"invoke player leave location: {location.getScriptableLocation.location_name}");
+        onPlayerLeaveLocation( location );
     }
     #endregion
 }

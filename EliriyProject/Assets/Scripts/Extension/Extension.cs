@@ -5,10 +5,15 @@ using UnityEngine;
 
 public static class Extension
 {
-    public static T[] getComponentAllChildren<T>( this Transform transform )
+    public static T[] getComponentAllChildrenArray<T>( this Transform transform )
     {
         T[] all = transform.GetComponentsInChildren<T>();
         return all.Skip(1).ToArray();
-        
+    }
+
+    public static List<T> getComponentAllChildrenList<T>( this Transform transform )
+    {
+        T[] all = transform.GetComponentsInChildren<T>();
+        return all.Skip(1).ToList();
     }
 }

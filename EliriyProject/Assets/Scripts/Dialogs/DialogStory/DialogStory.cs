@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class DialogStory : MonoBehaviour
 {
     [SerializeField] private GameObject tab_location = null;
     [SerializeField] private GameObject tab_story = null;
+    [SerializeField] private Button btn_exit = null;
     [Space]
     [Header("TAB location")]
     [SerializeField] private TextMeshProUGUI txt_loc_name   = null;
@@ -23,7 +25,18 @@ public class DialogStory : MonoBehaviour
 
 
     private List<UIAnswerButton> all_buttons = new List<UIAnswerButton>();
-    
+
+    private void Awake()
+    {
+        btn_exit.onClick.AddListener( onClickExit );
+    }
+
+    private void onClickExit()
+    {
+        destroyAllButtons();
+        closeDialog();
+    }
+
     public void init( Location location )
     {
         changeTabs( true );
@@ -95,6 +108,7 @@ public class DialogStory : MonoBehaviour
     private void spawnAnswers( Story story )
     {
         List<Choice> choices = story.currentChoices;
+        //story.variablesState["fa"] = "fack";
 
         if ( choices.Count == 0 )
         {

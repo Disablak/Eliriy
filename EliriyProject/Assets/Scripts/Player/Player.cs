@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     public void startTraveling( Travel travel )
     {
+        GameEventManager.invokePlayerLeaveLocation( travel.start_location );
         player_traveling.startTravel( travel );
     }
 

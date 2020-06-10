@@ -12,7 +12,7 @@ public class Way : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        way_points = transform.getComponentAllChildren<Transform>();
+        way_points = transform.getComponentAllChildrenArray<Transform>();
         way_length = getLength();
     }
 
