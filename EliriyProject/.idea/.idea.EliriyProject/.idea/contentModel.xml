@@ -185,11 +185,23 @@
             <e p="Timing.cs" t="Include" />
           </e>
         </e>
+        <e p="Resources" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="AllowedChars.txt" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
-          <e p="CameraHandler.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
+          <e p="Clickable.cs" t="Include" />
+          <e p="ColliderClickable.cs" t="Include" />
+          <e p="Constants" t="Include">
+            <e p="Constant.cs" t="Include" />
+          </e>
           <e p="Dialogs" t="Include">
+            <e p="DialogPlayer.cs" t="Include" />
             <e p="DialogStory" t="Include">
               <e p="DialogStory.cs" t="Include" />
+              <e p="DialogStoryBattle.cs" t="Include" />
               <e p="UIAnswerButton.cs" t="Include" />
             </e>
           </e>
@@ -199,23 +211,38 @@
           </e>
           <e p="GameEventManager.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="GlobalEnums.cs" t="Include" />
           <e p="Location.cs" t="Include" />
+          <e p="LocationsManager.cs" t="Include" />
           <e p="Player" t="Include">
+            <e p="Hero.cs" t="Include" />
             <e p="Player.cs" t="Include" />
+            <e p="PlayerInfo.cs" t="Include" />
             <e p="PlayerTraveling.cs" t="Include" />
           </e>
           <e p="ScriptableObjects" t="Include">
+            <e p="Hero" t="Include">
+              <e p="ScriptableHero.cs" t="Include" />
+              <e p="ScriptableHeroSkill.cs" t="Include" />
+            </e>
+            <e p="Items" t="Include">
+              <e p="ScriptableItem.cs" t="Include" />
+              <e p="ScriptableItemEquipable.cs" t="Include" />
+              <e p="ScriptableItemWeapon.cs" t="Include" />
+            </e>
             <e p="LocationActions" t="Include">
               <e p="ScriptableLocActionBase.cs" t="Include" />
               <e p="ScriptableLocActionStory.cs" t="Include" />
               <e p="ScriptableLocActionTravels.cs" t="Include" />
             </e>
             <e p="ScriptableLocation.cs" t="Include" />
+            <e p="ScriptableWayEvent.cs" t="Include" />
           </e>
           <e p="Shaders" t="Include">
             <e p="Blur.shader" t="Include" />
           </e>
           <e p="UIManager.cs" t="Include" />
+          <e p="VariableController.cs" t="Include" />
           <e p="Way.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">

@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogStory : MonoBehaviour
+public partial class DialogStory : MonoBehaviour
 {
     [SerializeField] private GameObject tab_location = null;
     [SerializeField] private GameObject tab_story = null;
@@ -23,7 +23,7 @@ public class DialogStory : MonoBehaviour
     [SerializeField] private Transform      root_answers     = null;
     [SerializeField] private UIAnswerButton ui_answer_button = null;
 
-
+    private Action finish_action = null;
     private List<UIAnswerButton> all_buttons = new List<UIAnswerButton>();
 
     private void Awake()
@@ -49,8 +49,10 @@ public class DialogStory : MonoBehaviour
         spawnActions( scriptable_location.location_actions, location.getTravels );
     }
     
-    public void init( TextAsset text_asset )
+    public void init( TextAsset text_asset, Action finish_action = null )
     {
+        this.finish_action = finish_action;
+        
         changeTabs( false );
 
         Story story = new Story( text_asset.text );
@@ -108,7 +110,6 @@ public class DialogStory : MonoBehaviour
     private void spawnAnswers( Story story )
     {
         List<Choice> choices = story.currentChoices;
-        //story.variablesState["fa"] = "fack";
 
         if ( choices.Count == 0 )
         {
@@ -117,6 +118,7 @@ public class DialogStory : MonoBehaviour
 
             void onClick()
             {
+                finish_action?.Invoke();
                 destroyAllButtons();
                 closeDialog();
             }
@@ -141,9 +143,10 @@ public class DialogStory : MonoBehaviour
     }
     #endregion
 
-    private UIAnswerButton spawnButtonAnswer()
+    private UIAnswerButton spawnButtonAnswer( ButtonSize button_size = ButtonSize.LITTLE )
     {
         UIAnswerButton btn = Instantiate( ui_answer_button, root_answers );
+        btn.rect_transform.sizeDelta = getBtnSize( button_size );
         all_buttons.Add( btn );
         return btn;
     }
@@ -165,5 +168,25 @@ public class DialogStory : MonoBehaviour
     private void closeDialog()
     {
         gameObject.SetActive( false );
+    }
+
+    private Vector2 getBtnSize( ButtonSize button_size )
+    {
+        switch ( button_size )
+        {
+            case ButtonSize.LITTLE: return new Vector2( 900.0f, 90.0f );
+            case ButtonSize.MEDIUM: return new Vector2( 900.0f, 150.0f );
+            case ButtonSize.BIG:    return new Vector2( 900.0f, 200.0f );
+
+            default:
+                throw new ArgumentOutOfRangeException( nameof(button_size), button_size, null );
+        }
+    }
+    
+    private enum ButtonSize
+    {
+        LITTLE,
+        MEDIUM,
+        BIG
     }
 }

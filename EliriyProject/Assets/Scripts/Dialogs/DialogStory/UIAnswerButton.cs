@@ -8,6 +8,7 @@ public class UIAnswerButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txt_answer = null;
     [SerializeField] private Button          button     = null;
 
+    public RectTransform rect_transform => (RectTransform) transform;
     
     public void init( string text, Action callback )
     {

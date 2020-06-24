@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     [Header( "Player Components" )]
     [SerializeField] private SpriteRenderer sprite_renderer = null;
     [SerializeField] private PlayerTraveling player_traveling = null;
+    [SerializeField] private Hero hero = null;
 
     private void Awake()
     {
