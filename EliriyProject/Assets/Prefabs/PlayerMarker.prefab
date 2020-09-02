@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2337507108622111862}
   - component: {fileID: 2337507108622111860}
   - component: {fileID: 1201695168408767088}
-  - component: {fileID: 185771646869038558}
   m_Layer: 11
   m_Name: PlayerMarker
   m_TagString: Untagged
@@ -98,7 +97,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite_renderer: {fileID: 2337507108622111862}
   player_traveling: {fileID: 1201695168408767088}
-  hero_characteristic: {fileID: 185771646869038558}
 --- !u!114 &1201695168408767088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,23 +110,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed_traveling: 0.3
---- !u!114 &185771646869038558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2337507108622112137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7748929c39bc73c4ebe9650d4b3adf6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strength: 5
-  dexterity: 5
-  intelligence: 5
-  weapon: {fileID: 11400000, guid: e639e8810b6870641ae077c9737de08a, type: 2}
-  equip: {fileID: 11400000, guid: 61c0096004bfc82458b7e008624330cd, type: 2}
-  skills:
-  - {fileID: 11400000, guid: 9b2785e69337b524b9dd1a26d799a587, type: 2}
-  - {fileID: 11400000, guid: 1c227b51a76ffee4e801d8fe8d9824bb, type: 2}

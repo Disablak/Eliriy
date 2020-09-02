@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class Location : MonoBehaviour
+public class Location : MonoBehaviourBase
 {
     [Header( "Main" )]
     [SerializeField] private ScriptableLocation scriptable_location = null;
@@ -26,10 +26,25 @@ public class Location : MonoBehaviour
 
         txt_loc_name.text = scriptable_location.location_name;
     }
-
+    
     private void onClick()
     {
         GameManager.instance.showDialogLocation( this );
+    }
+
+    protected override void initMyComponents()
+    {
+        base.initMyComponents();
+
+        setLocationState( LocationState.NO_ANYBODY );
+        
+        foreach ( Travel travel in travels )
+            travel.way.init();
+    }
+
+    public void init()
+    {
+        initComponents();
     }
 
     public void setLocationState( LocationState location_state )

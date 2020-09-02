@@ -39,9 +39,9 @@ public class GameManager : MonoBehaviour
 
     player_info.money = 150;
 
-    createHeroSquadAndStartBattle();
+    //createHeroSquadAndStartBattle();
     
-    //makeTravel( start_location.getTravels[0] );
+    makeTravel( start_location.getTravels[0] );
   }
 
   private void createHeroSquadAndStartBattle()

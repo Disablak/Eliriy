@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Ink.Runtime;
 using UnityEngine;
 
 
 public class DialogsManager : MonoBehaviour
 {
-    [SerializeField] private DialogStory dialog_story = null;
+    [SerializeField] private StoryTellingUI storyTellingUi = null;
     [SerializeField] private DialogPlayer dialog_player = null;
     
     public static DialogsManager instance = null;
@@ -21,20 +20,19 @@ public class DialogsManager : MonoBehaviour
 
     public void initDialogStory( Location location )
     {
-        dialog_story.gameObject.SetActive( true );
-        dialog_story.init( location );
+        storyTellingUi.gameObject.SetActive( true );
     }
     
     public void initDialogStory( TextAsset test_asset, Action finish_action = null )
     {
-        dialog_story.gameObject.SetActive( true );
-        dialog_story.init( test_asset, finish_action );
+        storyTellingUi.gameObject.SetActive( true );
+        storyTellingUi.init( test_asset, finish_action );
     }
 
     public void initDialogBattle( List<Hero> my_heroes, List<Hero> enemies )
     {
-        dialog_story.gameObject.SetActive( true );
-        dialog_story.initAsBattle( my_heroes, enemies );
+        storyTellingUi.gameObject.SetActive( true );
+        //dialog_story.initAsBattle( my_heroes, enemies, result => Debug.Log( $"Battle finished with result {result}" ) );
     }
 
     public void initDialogPlayer()

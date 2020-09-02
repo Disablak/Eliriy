@@ -15,4 +15,4 @@ MonoBehaviour:
   var_story_is_true: 0
   day_part: 0
   name_action: Intro
-  text_story: {fileID: 4900000, guid: 8839acd6c713b824b83a9f31d6bbfecf, type: 3}
+  text_story: {fileID: 4900000, guid: 9b0b98896fdb57d48b1cc4d8fc4a52c6, type: 3}

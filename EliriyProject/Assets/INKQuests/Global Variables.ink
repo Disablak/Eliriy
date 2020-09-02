@@ -7,3 +7,5 @@ VAR q_main = ACTIVE
 VAR part_beil = FALSE
 VAR mh_name = "Гервант из Рибии"
 VAR i_addvertise = TRUE
+
+CONST TAB = "\\t "

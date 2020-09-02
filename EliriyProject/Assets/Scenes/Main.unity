@@ -133,6 +133,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdvantureMain
       objectReference: {fileID: 0}
+    - target: {fileID: 3521033392304317696, guid: fd1e8d9bbb1921049805556689c1c7d9,
+        type: 3}
+      propertyPath: way_event
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202165566473559870, guid: fd1e8d9bbb1921049805556689c1c7d9,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4394075246159430886, guid: fd1e8d9bbb1921049805556689c1c7d9,
         type: 3}
       propertyPath: m_IsActive
@@ -192,6 +202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378638874957504807, guid: fd1e8d9bbb1921049805556689c1c7d9,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd1e8d9bbb1921049805556689c1c7d9, type: 3}

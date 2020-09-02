@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Loc1Village
   m_EditorClassIdentifier: 
   location_name: "\u041F\u043E\u0441\u0435\u043B\u0435\u043D\u0438\u0435"
-  location_banner: {fileID: 21300000, guid: 2e37d6654acedce4e946905655bd832c, type: 3}
-  location_description: "\u0422\u0440\u0443 \u0442\u0443\u0440\u0431\u043E\u0432\n"
+  location_banner: {fileID: 21300000, guid: 12122a2b9d7174f4fbbaaf1cb7d3f583, type: 3}
+  location_description: "\u0425\u043E\u0431\u0430"
   location_actions:
   - {fileID: 11400000, guid: 2300ae190415f7f45880f3f0340357cd, type: 2}
   - {fileID: 11400000, guid: 9fdc30a0f0ee85545980805025f27925, type: 2}

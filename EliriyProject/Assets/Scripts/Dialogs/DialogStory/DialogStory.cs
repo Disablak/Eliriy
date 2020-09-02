@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
@@ -102,7 +103,11 @@ public partial class DialogStory : MonoBehaviour
     private void loadStoryText( Story story )
     {
         if ( story.canContinue )
-            txt_story_desc.text = story.ContinueMaximally();
+        {
+            string message = story.ContinueMaximally();
+            message = message.Replace( "<pre>", "     " );
+            txt_story_desc.SetText( message );
+        }
 
         spawnAnswers( story );
     }
