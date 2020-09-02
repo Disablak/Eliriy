@@ -14,10 +14,14 @@ public class StoryUI : MonoBehaviour
   [Header( "Elements" )]
   [SerializeField] private UIBlockText ui_block_text = null;
   [SerializeField] private UIBlockBanner ui_block_banner = null;
-  
-  private bool maked_answer = true;
 
-  public bool makedAnswer => maked_answer;
+  private Action action_try_to_continue = null;
+  private List<UIBlockText> texts_list = new List<UIBlockText>();
+  
+  private bool made_answer = true;
+  private bool text_writing = false;
+
+  public bool storyCanContinue => made_answer;
   
   private void updateLayouts()
   {
@@ -25,37 +29,62 @@ public class StoryUI : MonoBehaviour
     content_size_fitter.enabled = true;
   }
 
-  public void createText( string text )
-  {/*
-    if ( text.Equals( string.Empty ) )
-    {
-      closeDialog();
-      return;
-    }
-    */
+  public void init( Action action_try_to_continue )
+  {
+    /*this.action_try_to_continue = action_try_to_continue;*/
+  }
+
+  public bool tryToSkipWritingText()
+  {
+    if ( texts_list.Count == 0 )
+      return false;
+
+    if ( !text_writing ) 
+      return false;
     
+    texts_list.Last().skip();
+    return true;
+  }
+  
+  public void createText( string text, Action can_continue_action )
+  {
     UIBlockText new_block_text = Instantiate( ui_block_text, content_story );
-    new_block_text.init( text.filter(), updateLayouts );
-    content_size_fitter.enabled = false;
+    new_block_text.init( text.filter(), afterInitAction );
+    texts_list.Add( new_block_text );
+    
+    text_writing = true;
+
+    void afterInitAction()
+    {
+      updateLayouts();
+      can_continue_action?.Invoke();
+      
+      text_writing = false;
+    }
   }
   
   public void createAnswers( Story story, AnswersUI answers_ui, Action try_to_continue_action )
   {
-    maked_answer = false;
+    made_answer = false;
     
     List<Choice> choices = story.currentChoices;
     List<string> titles  = choices.Select( x => x.text ).ToList();
-    List<Action> actions = choices.Select( choice => (Action) ( () => onClick( choice.index ) ) ).ToList();
+    List<Action> actions = choices.Select( choice => (Action) ( () => onClickAnswer( choice.index ) ) ).ToList();
     
-    void onClick( int idx )
+    answers_ui.createAnswers( titles, actions, callbackTextDescription );
+    
+    void onClickAnswer( int idx )
     {
-      maked_answer = true;
+      made_answer = true;
       
       story.ChooseChoiceIndex( idx );
       try_to_continue_action();
     }
-
-    answers_ui.createAnswers( titles, actions, createText );
+    
+    void callbackTextDescription( string text )
+    {
+      createText( text, try_to_continue_action );
+    }
   }
   
   public void createBanner( Sprite banner_sprite )

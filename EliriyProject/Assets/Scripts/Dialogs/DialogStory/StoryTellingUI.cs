@@ -12,12 +12,14 @@ public partial class StoryTellingUI : MonoBehaviourBase
   
   private Story story     = null;
   
-  private bool canContinue => story_ui.makedAnswer;
+  private bool canContinue => story_ui.storyCanContinue;
+  private bool hasChoices => story.currentChoices.Count > 0;
   
   
-  public void init( TextAsset text_asset, Action finish_action = null )
+  public void init( TextAsset text_asset )
   {
     answers_ui.init( tryToContinue );
+    story_ui.init( tryToContinue );
     
     story = new Story( text_asset.text );
     
@@ -26,21 +28,35 @@ public partial class StoryTellingUI : MonoBehaviourBase
 
   private void tryToContinue()
   {
-    if ( !canContinue )
+    if ( story_ui.tryToSkipWritingText() )
       return;
     
-    if ( story.canContinue )
-      story_ui.createText( story.Continue() );
+    if ( !canContinue )
+      return;
 
-    if ( story.currentChoices.Count > 0 )
+    if ( story.canContinue )
     {
-      story_ui.createAnswers( story, answers_ui, tryToContinue );
+      story_ui.createText( story.Continue(), canContinueWithText );
+      return;
+    }
+
+    if ( hasChoices )
+    {
+      createAnswers();
       return;
     }
 
     closeDialog();
+
+    void createAnswers() => story_ui.createAnswers( story, answers_ui, tryToContinue );
+
+    void canContinueWithText()
+    {
+      if ( hasChoices )
+        createAnswers();
+    }
   }
-  
+
   private void closeDialog()
   {
     return;

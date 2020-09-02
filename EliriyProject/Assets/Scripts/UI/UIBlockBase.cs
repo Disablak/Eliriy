@@ -30,7 +30,6 @@ public class UIBlockBase : MonoBehaviourBase
     {
       yield return Timing.WaitForOneFrame;
       
-      action_after_init?.Invoke();
       setVisible();
     }
   }

@@ -26,7 +26,7 @@ public class DialogsManager : MonoBehaviour
     public void initDialogStory( TextAsset test_asset, Action finish_action = null )
     {
         storyTellingUi.gameObject.SetActive( true );
-        storyTellingUi.init( test_asset, finish_action );
+        storyTellingUi.init( test_asset );
     }
 
     public void initDialogBattle( List<Hero> my_heroes, List<Hero> enemies )
