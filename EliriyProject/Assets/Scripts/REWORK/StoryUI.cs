@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Ink.Runtime;
+using MEC;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,8 +26,18 @@ public class StoryUI : MonoBehaviour
   
   private void updateLayouts()
   {
-    vertical_layout_group.SetLayoutVertical();
-    content_size_fitter.enabled = true;
+    Timing.RunCoroutine( tweenSymbols() );
+
+    IEnumerator<float> tweenSymbols()
+    {
+      vertical_layout_group.enabled = false;
+      content_size_fitter.enabled = false;
+      yield return Timing.WaitForOneFrame;
+      
+      vertical_layout_group.enabled = true;
+      content_size_fitter.enabled = true;
+      vertical_layout_group.SetLayoutVertical();
+    }
   }
 
   public void init( Action action_try_to_continue )
@@ -49,7 +60,7 @@ public class StoryUI : MonoBehaviour
   public void createText( string text, Action can_continue_action )
   {
     UIBlockText new_block_text = Instantiate( ui_block_text, content_story );
-    new_block_text.init( text.filter(), afterInitAction );
+    new_block_text.init( text.filter(), afterInitAction, updateLayouts );
     texts_list.Add( new_block_text );
     
     text_writing = true;
@@ -63,7 +74,7 @@ public class StoryUI : MonoBehaviour
     }
   }
   
-  public void createAnswers( Story story, AnswersUI answers_ui, Action try_to_continue_action )
+  public void createAnswers( Story story, AnswersUI answers_ui, Action create_text_action )
   {
     made_answer = false;
     
@@ -71,19 +82,20 @@ public class StoryUI : MonoBehaviour
     List<string> titles  = choices.Select( x => x.text ).ToList();
     List<Action> actions = choices.Select( choice => (Action) ( () => onClickAnswer( choice.index ) ) ).ToList();
     
-    answers_ui.createAnswers( titles, actions, callbackTextDescription );
+    answers_ui.createAnswers( titles, actions/*, callbackTextDescription*/ );
     
     void onClickAnswer( int idx )
     {
       made_answer = true;
+      text_writing = true;
       
       story.ChooseChoiceIndex( idx );
-      try_to_continue_action();
+      create_text_action();
     }
     
     void callbackTextDescription( string text )
     {
-      createText( text, try_to_continue_action );
+      createText( text, create_text_action );
     }
   }
   

@@ -36,7 +36,7 @@ public partial class StoryTellingUI : MonoBehaviourBase
 
     if ( story.canContinue )
     {
-      story_ui.createText( story.Continue(), canContinueWithText );
+      createText();
       return;
     }
 
@@ -48,7 +48,9 @@ public partial class StoryTellingUI : MonoBehaviourBase
 
     closeDialog();
 
-    void createAnswers() => story_ui.createAnswers( story, answers_ui, tryToContinue );
+    void createText() => story_ui.createText( story.Continue(), canContinueWithText );
+
+    void createAnswers() => story_ui.createAnswers( story, answers_ui, createText );
 
     void canContinueWithText()
     {

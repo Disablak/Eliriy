@@ -62,6 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas_group: {fileID: 2072363134509803720}
   txt_block: {fileID: 6513665053280241133}
+  content_size_fitter: {fileID: 6237198565848607026}
 --- !u!114 &6513665053280241133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572477326012366913}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0

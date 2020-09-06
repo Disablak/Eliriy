@@ -29,7 +29,7 @@ public class AnswersUI : UIBlockBase
     initComponents();
   }
   
-  public void createAnswers( List<string> titles, List<Action> actions, Action<string> callback )
+  public void createAnswers( List<string> titles, List<Action> actions/*, Action<string> callback*/ )
   {
     canvas_group.alpha = 0.0f;
     
@@ -45,7 +45,7 @@ public class AnswersUI : UIBlockBase
     {
       destroyAllButtons();
       
-      callback( text_title.bold() );
+      //callback( text_title.bold() );
       
       on_click();
     }
