@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1698052311
+    locked: 0
+  - name: Ways
+    uniqueID: 2364052679
+    locked: 0
+  - name: Locations
+    uniqueID: 1260404755
+    locked: 0
+  - name: Markers
+    uniqueID: 1829529991
+    locked: 0
+  - name: UI
+    uniqueID: 3570163411
+    locked: 0
